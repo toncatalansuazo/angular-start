@@ -1,3 +1,14 @@
+# Prerequisite
+
+Angular CLI version  12.0.x 
+
+Angular version 12.0.x 
+
+Node v 12.13.x/14.15.x or later minor version 
+
+TypeScript version 4.2.x 
+
+
 # AngularStart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
