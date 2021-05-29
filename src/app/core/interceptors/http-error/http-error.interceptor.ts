@@ -19,6 +19,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   }
 
   private errorHandler(response: HttpEvent<any>): Observable<HttpEvent<any>> {
+    console.log('show dialog error');
     if (!environment.production) {
       console.error('Request error', response);
     }

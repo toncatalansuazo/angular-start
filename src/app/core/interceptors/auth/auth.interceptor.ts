@@ -15,14 +15,21 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    
-    if (!req.headers.has('Content-Type')) {
-        req = req.clone({ headers: req.headers.set('Content-Type', 'application/json') });
-    }
-    if (this.access_token) {
-        req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + this.access_token) });
-    }
-    
+    this.AddContentType(req);
+    this.addAccessToken(req);
+
     return next.handle(req);
+  }
+
+  private AddContentType(req: HttpRequest<unknown>) {
+    if (!req.headers.has('Content-Type')) {
+      req = req.clone({ headers: req.headers.set('Content-Type', 'application/json') });
+    }
+  }
+
+  private addAccessToken(req: HttpRequest<unknown>) {
+    if (this.access_token) {
+      req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + this.access_token) });
+    }
   }
 }
