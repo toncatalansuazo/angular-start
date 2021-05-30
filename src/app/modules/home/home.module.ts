@@ -1,3 +1,5 @@
+import { HomeBodyComponent } from './home-body/home-body.component';
+import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
@@ -17,10 +19,12 @@ const ROUTER = RouterModule.forChild([
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HomeBodyComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ROUTER,
     StoreModule.forFeature(fromHome.homeFeatureKey, fromHome.reducer),
     EffectsModule.forFeature([HomeEffects])

@@ -1,0 +1,5 @@
+<div *ngFor="let product of products">
+  {{ product.name }} <br>
+  {{ product.created_at | date: 'yyyy-mm-dd' }}
+  {{ product |  salePrice | currency}}
+</div>

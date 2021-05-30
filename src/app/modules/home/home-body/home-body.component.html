@@ -1,0 +1,9 @@
+<p>home-body works!</p>
+<section *ngIf="(products$| async) as products; else noProducts">
+  <cs-product-list [products]="products">
+  </cs-product-list>
+</section>
+<ng-template #noProducts>
+  sorry :( all products were selled
+</ng-template>
+

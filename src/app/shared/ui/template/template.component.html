@@ -1,1 +1,15 @@
-<p>template works!</p>
+<section class="container">
+  <header>
+    <ng-content select="[header]"></ng-content>
+  </header>
+  <main>
+    <ng-content select="[body]"></ng-content>
+  </main>
+  <aside>
+    <ng-content select="[sidebar]"></ng-content>
+  </aside>
+  <footer>
+    <ng-content select="[footer]"></ng-content>
+  </footer>
+</section>
+

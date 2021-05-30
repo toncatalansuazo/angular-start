@@ -1,0 +1,32 @@
+@import "../../../../styles.scss";
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 5vh auto 5vh;
+  grid-template-areas:
+    "header header header header"
+    "main main main sidebar"
+    "footer footer footer footer";
+  column-gap: 0px;
+}
+
+header,
+footer {
+}
+
+header {
+  background-color: $main-color;
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: sidebar;
+}
+footer {
+  grid-area: footer;
+  background-color: $main-color;
+}

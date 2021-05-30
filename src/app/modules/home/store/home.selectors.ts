@@ -4,3 +4,8 @@ import * as fromHome from './home.reducer';
 export const selectHomeState = createFeatureSelector<fromHome.State>(
   fromHome.homeFeatureKey
 );
+
+export const selectProducts = createSelector(
+  selectHomeState,
+  state => state.products
+);

@@ -7,19 +7,21 @@ const routes: Routes = [
     path: '', canActivate: [AuthGuard], pathMatch: 'prefix', children: [
       {
         path: '',
-        redirectTo: '/login',
+        redirectTo: '/home',
         pathMatch: 'full'
       },
-      {
-        path: 'home',
-        loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
-      }
+      { path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) }
     ]
   },
   {
+    path: 'home',
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
-  }];
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
