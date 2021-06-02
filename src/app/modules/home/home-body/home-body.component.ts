@@ -19,6 +19,11 @@ export class HomeBodyComponent implements OnInit {
     this.listenProducts();
   }
 
+  onSelectProduct($event: Product) {
+    console.log('product selected', $event);
+    this.store.dispatch(fromHomeActions.setCurrentProduct({product: $event}));
+  }
+
   private listenProducts() {
     this.products$ = this.store.select(fromHomeSelectors.selectProducts);
   }

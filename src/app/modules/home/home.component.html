@@ -1,12 +1,12 @@
-<cs-template>
+<cs-template [showSidebar]="(showSidebar$ | async) || false">
   <section header>
-    inside header
+    {{(showSidebar$ | async)}}
+    inside header<a [routerLink]="['/admin']">admin panel</a>
   </section>
   <cs-home-body style="color: black" body>
   </cs-home-body>
-  <section style="color: black" sidebar>
-    sidebar
-  </section>
+  <cs-home-sidebar style="color: black" right-sidebar>
+  </cs-home-sidebar>
   <section footer>
     inside footer
   </section>

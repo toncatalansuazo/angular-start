@@ -1,0 +1,4 @@
+<p>home-sidebar works!</p>
+<div *ngIf="(currentProduct$ | async) as product">
+  {{ product | json }}
+</div>

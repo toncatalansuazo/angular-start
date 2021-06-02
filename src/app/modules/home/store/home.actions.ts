@@ -28,3 +28,8 @@ export const loadProductsFailure = createAction(
   '[Home] Load Homes Failure',
   props<{ error: any }>()
 );
+
+export const setCurrentProduct = createAction(
+  '[Home] Set Current Product',
+  props<{ product: Product }>()
+);

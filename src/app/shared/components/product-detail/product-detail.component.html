@@ -1,1 +1,19 @@
-<p>product-detail works!</p>
+<section class="product">
+  <div class="product__img">
+    <img src="{{ product.img}}" alt="dolce italiano {{ product.name }}" />
+  </div>
+  <p class="product__price">
+    {{ product | salePrice | currency }}
+  </p>
+  <p class="product__stock">
+    stock {{ product.stock }}
+  </p>
+
+  <p class="product__name">
+    {{ product.name }}
+  </p>
+  <p class="product__created">
+    {{ product.created_at | date: 'yyyy-mm-dd' }}
+  </p>
+</section>
+

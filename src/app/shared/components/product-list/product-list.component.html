@@ -1,5 +1,8 @@
-<div *ngFor="let product of products">
-  {{ product.name }} <br>
-  {{ product.created_at | date: 'yyyy-mm-dd' }}
-  {{ product |  salePrice | currency}}
-</div>
+<section class="products-container">
+  <cs-product-detail
+    *ngFor="let product of products"
+    [product]="product"
+    (click)="onSelectProduct(product)">
+  </cs-product-detail>
+</section>
+

@@ -1,1 +1,12 @@
-<p>admin works!</p>
+<cs-template>
+  <section header>
+    inside header<a [routerLink]="['/admin']">admin panel</a>
+  </section>
+  <cs-admin-body style="color: black" body>
+  </cs-admin-body>
+  <cs-admin-sidebar style="color: black" sidebar>
+  </cs-admin-sidebar>
+  <section footer>
+    inside footer
+  </section>
+</cs-template>

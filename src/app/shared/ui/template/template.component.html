@@ -3,11 +3,14 @@
     <ng-content select="[header]"></ng-content>
   </header>
   <main>
+    <aside class="left-sidebar">
+      <ng-content select="[left-sidebar]"></ng-content>
+    </aside>
     <ng-content select="[body]"></ng-content>
+    <aside class="right-sidebar">
+      <ng-content select="[right-sidebar]"></ng-content>
+    </aside>
   </main>
-  <aside>
-    <ng-content select="[sidebar]"></ng-content>
-  </aside>
   <footer>
     <ng-content select="[footer]"></ng-content>
   </footer>

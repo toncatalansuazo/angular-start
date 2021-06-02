@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromHome from './store/home.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { HomeEffects } from './store/home.effects';
+import { HomeSidebarComponent } from './home-sidebar/home-sidebar.component';
 
 const ROUTER = RouterModule.forChild([
   {
@@ -20,7 +21,8 @@ const ROUTER = RouterModule.forChild([
 @NgModule({
   declarations: [
     HomeComponent,
-    HomeBodyComponent
+    HomeBodyComponent,
+    HomeSidebarComponent
   ],
   imports: [
     CommonModule,

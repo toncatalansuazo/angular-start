@@ -9,3 +9,8 @@ export const selectProducts = createSelector(
   selectHomeState,
   state => state.products
 );
+
+export const selectCurrentProduct = createSelector(
+  selectHomeState,
+  state => state.currentProduct
+);
