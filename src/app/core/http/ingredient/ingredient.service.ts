@@ -14,8 +14,8 @@ export class IngredientService {
     return this.http.get<Ingredient[]>(ConfigurationEndpoint.getIngredientsEndpoint());
   }
 
-  saveIngredient(ingredient: Ingredient): Observable<Ingredient[]> {
-    return this.http.post<Ingredient[]>(ConfigurationEndpoint.getIngredientsEndpoint(), ingredient);
+  saveIngredient(ingredient: Ingredient): Observable<Ingredient> {
+    return this.http.post<Ingredient>(ConfigurationEndpoint.getIngredientsEndpoint(), ingredient);
   }
 
   updateIngredient(ingredient: Ingredient): Observable<Ingredient> {

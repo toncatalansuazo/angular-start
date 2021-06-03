@@ -83,7 +83,7 @@ export const saveIngredient = createAction(
 );
 export const saveIngredientsSuccess = createAction(
   '[Admin] Save Ingredients Success',
-  props<{ Ingredients: Ingredient }>()
+  props<{ ingredient: Ingredient }>()
 );
 
 export const saveIngredientsFailure = createAction(
