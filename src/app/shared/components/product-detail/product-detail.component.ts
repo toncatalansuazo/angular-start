@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Product } from 'src/app/models/product';
 
 @Component({
@@ -9,9 +10,16 @@ import { Product } from 'src/app/models/product';
 export class ProductDetailComponent implements OnInit {
   @Input()
   product: Product;
+  @Output()
+  showIngredients: EventEmitter<Product> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onShowIngredients(event: MouseEvent, product: Product) {
+    event.preventDefault();
+    this.showIngredients.emit(product);
   }
 
 }

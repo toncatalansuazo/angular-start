@@ -8,7 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TemplateComponent implements OnInit {
 
   @Input()
-  showSidebar: boolean = false;
+  showRightSidebar: boolean = false;
+  @Input()
+  showLeftSidebar: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

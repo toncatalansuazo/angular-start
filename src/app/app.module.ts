@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { fromUiEffects } from './shared/store';
 import { metaReducers, reducers } from './store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { metaReducers, reducers } from './store';
         strictActionImmutability: true,
       }
     }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

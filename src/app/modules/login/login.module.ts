@@ -7,6 +7,8 @@ import { StoreModule } from '@ngrx/store';
 import * as fromLogin from './store/login.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { LoginEffects } from './store/login.effects';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 const ROUTER = RouterModule.forChild([
   {
@@ -21,6 +23,8 @@ const ROUTER = RouterModule.forChild([
   ],
   imports: [
     ROUTER,
+    SharedModule,
+    MaterialModule,
     StoreModule.forFeature(fromLogin.loginFeatureKey, fromLogin.reducer),
     EffectsModule.forFeature([LoginEffects])
   ]

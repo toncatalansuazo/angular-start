@@ -2,7 +2,10 @@
   height: 100vh;
 }
 .container-products {
+  padding: 20px;
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

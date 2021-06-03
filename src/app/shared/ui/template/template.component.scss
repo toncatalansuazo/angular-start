@@ -23,6 +23,8 @@ header {
 main {
   grid-area: main;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 aside {
   position: absolute;
@@ -31,12 +33,13 @@ aside {
   &.left-sidebar {
     left: 0;
     top: 0;
+    background-color: $second-color;
   }
   &.right-sidebar {
     right: 0;
     top: 0;
     margin-right: 0;
-    background-color: azure;
+    background-color: $second-color;
   }
   &.left-sidebar--hide {
     margin-left: -20%;
@@ -50,6 +53,7 @@ aside {
 footer {
   grid-area: footer;
   background-color: $main-color;
+  text-align: center;
 }
 .sidebar--show {
   width: 100%;

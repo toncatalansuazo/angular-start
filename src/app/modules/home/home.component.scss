@@ -5,3 +5,20 @@ cs-template {
 .section {
   color: black;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  a, mat-icon {
+    width: 25%;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+  a {
+    text-align: end;
+  }
+}

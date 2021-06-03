@@ -1,11 +1,26 @@
-<p>admin-body works!</p>
-<section *ngIf="(products$| async) as products; else noProducts">
-  <cs-product-list
-    [products]="products"
-    (selectProduct)="onSelectProduct($event)">
-  </cs-product-list>
-</section>
-<ng-template #noProducts>
-  sorry :( all products were sold
-</ng-template>
+<mat-card>
+  <mat-list>
+    <mat-divider></mat-divider>
+    <mat-list-item>Products</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <a [routerLinkActive]="['is-active']" routerLink="/admin/products">Show products</a>
+    </mat-list-item>
+    <mat-list-item routerLinkActive="active">
+      <a [routerLinkActive]="['is-active']" routerLink="/admin/products/create">Create product</a>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Ingredients</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <a [routerLinkActive]="['is-active']" routerLink="/admin/ingredients">Show Ingredients</a>
+    </mat-list-item>
+    <mat-list-item>
+      <a [routerLinkActive]="['is-active']" routerLink="/admin/ingredients/create">Create Ingredients</a>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>
+<router-outlet>
+</router-outlet>
 

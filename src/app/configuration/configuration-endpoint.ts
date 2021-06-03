@@ -11,4 +11,8 @@ export class ConfigurationEndpoint {
     static getProductsEndpoint(): string {
       return `${this.csEndpoint}/products`;
     }
+
+    static getIngredientsEndpoint(): string {
+      return `${this.csEndpoint}/ingredients`;
+    }
 }

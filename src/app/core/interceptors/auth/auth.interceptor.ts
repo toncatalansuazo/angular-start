@@ -28,7 +28,8 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private addAccessToken(req: HttpRequest<unknown>) {
-    if (this.access_token) {
+    const access_token = localStorage.getItem('access_token');
+    if (access_token) {
       req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + this.access_token) });
     }
   }

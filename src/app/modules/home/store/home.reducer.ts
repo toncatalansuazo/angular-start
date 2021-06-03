@@ -4,10 +4,10 @@ import * as fromHomeActions from './home.actions';
 
 export const homeFeatureKey = 'home';
 
+
 export interface State {
   products: Product[];
   currentProduct: Product | undefined;
-
 }
 
 export const initialState: State = {

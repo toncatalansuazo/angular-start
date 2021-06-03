@@ -1,8 +1,8 @@
-import { Product } from './../../../models/product';
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { fromHome, fromHomeActions, fromHomeSelectors } from '../store';
+import { Product } from './../../../models/product';
 
 @Component({
   selector: 'cs-home-body',
@@ -19,9 +19,13 @@ export class HomeBodyComponent implements OnInit {
     this.listenProducts();
   }
 
-  onSelectProduct($event: Product) {
-    console.log('product selected', $event);
-    this.store.dispatch(fromHomeActions.setCurrentProduct({product: $event}));
+  onSelectProduct(product: Product) {
+    console.log('product selected', product);
+    this.store.dispatch(fromHomeActions.setCurrentProduct({ product }));
+  }
+
+  onShowIngredients(product: Product) {
+    this.store.dispatch(fromHomeActions.showIngredients({ product }));
   }
 
   private listenProducts() {

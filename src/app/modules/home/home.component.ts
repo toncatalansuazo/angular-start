@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import { fromHome, fromHomeSelectors } from './store';
 import { Product } from 'src/app/models/product';
 import { map } from 'rxjs/operators';
+import { fromUiSelectors } from 'src/app/shared/store';
+import { Sidebars } from 'src/app/models/sidebars';
 
 @Component({
   selector: 'cs-home',
@@ -12,11 +14,13 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   showSidebar$: Observable<boolean>;
+  isRightSideBarOpen$: Observable<boolean>;
 
   constructor(private store: Store<fromHome.State>) { }
 
   ngOnInit(): void {
-    this.listenCurrentProduct()
+    this.listenCurrentProduct();
+    this.isRightSideBarOpen$ = this.store.select(fromUiSelectors.isSideBarOpen(Sidebars.HomeSideBarRight));
   }
 
   private listenCurrentProduct() {

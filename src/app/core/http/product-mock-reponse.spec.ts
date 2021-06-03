@@ -10,10 +10,10 @@ twoDays.setDate(twoDays.getDate() - 2);
 let threeDays = new Date();
 threeDays.setDate(threeDays.getDate() - 3);
 
-const ingredients: Ingredient[] = [{id: 123, name: 'mafioso', quantity: 123, unit: 'grs'}]
+const ingredients: Ingredient[] = [{id: 123, name: 'mafioso'}]
 export const productsMock: Product[] = [
-  { id: 0, name: 'product ', price: 100, stock: 2, created_at: new Date().getTime(), expired: false, ...{img}, ingredients: ingredients },
-  { id: 1, name: `product1 one day ${oneDay.getDate()}` , price: 100, stock: 2, created_at: oneDay.getTime(), expired: false, ...{img}, ingredients: ingredients },
-  { id: 2, name: `product2 two day ${twoDays.getDate()}`, price: 100, stock: 2, created_at: twoDays.getTime(), expired: false, ...{img}, ingredients: ingredients },
+  { id: 0, name: 'product ', price: 100, stock: 2, createdAt: new Date().getTime(), expired: false, ...{img}, ingredients: ingredients },
+  { id: 1, name: `product1 one day ${oneDay.getDate()}` , price: 100, stock: 2, createdAt: oneDay.getTime(), expired: false, ...{img}, ingredients: ingredients },
+  { id: 2, name: `product2 two day ${twoDays.getDate()}`, price: 100, stock: 2, createdAt: twoDays.getTime(), expired: false, ...{img}, ingredients: ingredients },
   // { name: `product3 three day ${threeDays.getDate()}`, price: 100, created_at: threeDays.getTime(), expired: false },
 ];

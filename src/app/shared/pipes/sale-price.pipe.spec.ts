@@ -1,8 +1,8 @@
-import { SalePricePipe } from './sale-price.pipe';
+import { DiscountPipe } from './sale-price.pipe';
 
 describe('SalePricePipe', () => {
   it('create an instance', () => {
-    const pipe = new SalePricePipe();
+    const pipe = new DiscountPipe();
     expect(pipe).toBeTruthy();
   });
 });

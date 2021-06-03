@@ -12,6 +12,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { fromAdmin, fromAdminEffects } from './store';
 import { AdminEffects } from './store/admin.effects';
+import { ProductCreateComponent } from './products/product-create/product-create.component';
+import { IngredientCreateComponent } from './ingredients/ingredient-create/ingredient-create.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { IngredientListComponent } from './ingredients/ingredient-list/ingredient-list.component';
 
 
 @NgModule({
@@ -20,7 +24,11 @@ import { AdminEffects } from './store/admin.effects';
     AdminHeaderComponent,
     AdminBodyComponent,
     AdminSidebarComponent,
-    AdminFooterComponent
+    AdminFooterComponent,
+    ProductCreateComponent,
+    IngredientCreateComponent,
+    ProductListComponent,
+    IngredientListComponent
   ],
   imports: [
     SharedModule,

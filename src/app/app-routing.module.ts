@@ -4,13 +4,12 @@ import { AuthGuard } from './core/guards/auth/auth.guard';
 
 const routes: Routes = [
   {
-    path: '', canActivate: [AuthGuard], pathMatch: 'prefix', children: [
+    path: '', pathMatch: 'prefix', children: [
       {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
-      },
-      { path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) }
+      }
     ]
   },
   {
@@ -19,8 +18,14 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AuthGuard]
   }
+
 ];
 
 @NgModule({

@@ -12,9 +12,17 @@ export class ProductListComponent implements OnInit {
   products: Product[];
   @Output()
   selectProduct: EventEmitter<Product> = new EventEmitter();
+  @Output()
+  showIngredients: EventEmitter<Product> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onShowIngredients(product: Product) {
+    console.log({product});
+    this.showIngredients.emit(product);
   }
 
   onSelectProduct(product: Product) {

@@ -3,24 +3,21 @@ import { Product } from './../../models/product';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'salePrice'
+  name: 'discountPipe'
 })
-export class SalePricePipe implements PipeTransform {
+export class DiscountPipe implements PipeTransform {
 
-  transform(product: Product): number {
-    const productDate: Date = new Date(product.created_at);
+  transform(product: Product): string {
+    const productDate: Date = new Date(product.createdAt);
     const currentDate: Date = new Date();
-    const daysDiff: number = getDaysDiff(productDate, currentDate)
-    if (daysDiff === 0) {
-      return product.price;
-    }
+    const daysDiff: number = getDaysDiff(productDate, currentDate);
     if (daysDiff === 1) {
-      return product.price * 0.8;
+      return '20%';
     }
     if (daysDiff === 2) {
-      return product.price * 0.2;
+      return '80%';
     }
-    throw Error(`product has expired`);
+    return '0';
   }
 
 }

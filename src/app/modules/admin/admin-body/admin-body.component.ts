@@ -11,6 +11,7 @@ import { fromAdmin, fromAdminActions, fromAdminSelectors } from '../store';
   styleUrls: ['./admin-body.component.scss']
 })
 export class AdminBodyComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'name', 'price', 'edit', 'delete'];
   products$: Observable<Product[]>;
 
   constructor(private store: Store<fromAdmin.State>) { }

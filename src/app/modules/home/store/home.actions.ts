@@ -33,3 +33,8 @@ export const setCurrentProduct = createAction(
   '[Home] Set Current Product',
   props<{ product: Product }>()
 );
+
+export const showIngredients = createAction(
+  '[Home] Show Ingredients',
+  props<{ product: Product }>()
+);
